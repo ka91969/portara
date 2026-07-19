@@ -175,9 +175,26 @@
 <h2><a href="#festivities" style="color: #003366; text-decoration: none;">FESTIVITIES</a></h2>
 <h2><a href="#nearby-destinations" style="color: #003366; text-decoration: none;">NEAR-BY DESTINATIONS</a></h2>
 <h2><a href="#traditional-villages" style="color: #003366; text-decoration: none;">TRADITIONAL VILLAGES</a></h2>
+<h2><a href="#traveler-stories" style="color: #003366; text-decoration: none;">TRAVELER STORIES</a></h2>
+
+<div style="max-width: 500px; margin: 30px auto 20px auto;">
+    <input type="text" id="blog-search" placeholder="Search the blog (e.g. beaches, villa, food)..." style="width: 100%; padding: 12px 16px; border: 1px solid #ccc; border-radius: 30px; font-size: 15px; outline: none;">
+</div>
+
+<div id="no-results-msg" style="display: none; text-align: center; color: #808080; margin-bottom: 20px;">No posts match your search. Try a different term or category.</div>
+
+<div style="text-align: center; margin-bottom: 40px;">
+    <a href="#" class="cat-link active" data-cat="all" style="display: inline-block; margin: 4px; padding: 6px 16px; border-radius: 20px; border: 1px solid #003366; color: #003366; text-decoration: none; font-size: 13px;">All</a><a href="#" class="cat-link" data-cat="archaeology" style="display: inline-block; margin: 4px; padding: 6px 16px; border-radius: 20px; border: 1px solid #003366; color: #003366; text-decoration: none; font-size: 13px;">Archaeology</a><a href="#" class="cat-link" data-cat="beaches" style="display: inline-block; margin: 4px; padding: 6px 16px; border-radius: 20px; border: 1px solid #003366; color: #003366; text-decoration: none; font-size: 13px;">Beaches</a><a href="#" class="cat-link" data-cat="food" style="display: inline-block; margin: 4px; padding: 6px 16px; border-radius: 20px; border: 1px solid #003366; color: #003366; text-decoration: none; font-size: 13px;">Food</a><a href="#" class="cat-link" data-cat="festivities" style="display: inline-block; margin: 4px; padding: 6px 16px; border-radius: 20px; border: 1px solid #003366; color: #003366; text-decoration: none; font-size: 13px;">Festivities</a><a href="#" class="cat-link" data-cat="nearby-destinations" style="display: inline-block; margin: 4px; padding: 6px 16px; border-radius: 20px; border: 1px solid #003366; color: #003366; text-decoration: none; font-size: 13px;">Near-by Destinations</a><a href="#" class="cat-link" data-cat="traditional-villages" style="display: inline-block; margin: 4px; padding: 6px 16px; border-radius: 20px; border: 1px solid #003366; color: #003366; text-decoration: none; font-size: 13px;">Traditional Villages</a>
+    <br>
+    <span style="display: inline-block; margin: 10px 4px 4px 4px; font-size: 12px; color: #808080; text-transform: uppercase; letter-spacing: 1px;">Traveler Stories:</span><br>
+    <a href="#" class="cat-link" data-cat="usa" style="display: inline-block; margin: 4px; padding: 6px 16px; border-radius: 20px; border: 1px solid #003366; color: #003366; text-decoration: none; font-size: 13px;">🇺🇸 USA</a><a href="#" class="cat-link" data-cat="netherlands" style="display: inline-block; margin: 4px; padding: 6px 16px; border-radius: 20px; border: 1px solid #003366; color: #003366; text-decoration: none; font-size: 13px;">🇳🇱 Netherlands</a><a href="#" class="cat-link" data-cat="singapore" style="display: inline-block; margin: 4px; padding: 6px 16px; border-radius: 20px; border: 1px solid #003366; color: #003366; text-decoration: none; font-size: 13px;">🇸🇬 Singapore</a><a href="#" class="cat-link" data-cat="germany" style="display: inline-block; margin: 4px; padding: 6px 16px; border-radius: 20px; border: 1px solid #003366; color: #003366; text-decoration: none; font-size: 13px;">🇩🇪 Germany</a>
+</div>
+<style>
+    .cat-link.active { background-color: #003366; color: #ffffff !important; }
+</style>
 
                     <!-- Single Blog Area: Archaeology -->
-                      <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="300ms">
+                      <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="300ms" data-category="archaeology" data-title="naxos archaeology">
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail">
                             <img src="img/blog-img/2.jpg" alt="Archaeology">
@@ -218,7 +235,7 @@
                     </div><!-- end archaeology single-blog-area -->
 
                     <!-- Single Blog Area: Beaches -->
-                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="600ms">
+                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="600ms" data-category="beaches" data-title="naxos beaches">
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail">
                             <img src="img/blog-img/3.jpg" alt="Naxos Beaches">
@@ -264,7 +281,7 @@
                     </div><!-- end beaches single-blog-area -->
 
                     <!-- Single Blog Area: Food -->
-                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="uncategorized" data-title="babies and photography">
+                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="food" data-title="naxos food">
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail">
                             <img src="img/blog-img/1.jpg" alt="Naxos Food">
@@ -332,7 +349,7 @@
                     </div><!-- end food single-blog-area -->
 
     <!-- Single Blog Area: Festivities -->
-                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="uncategorized" data-title="babies and photography">
+                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="festivities" data-title="naxos festivities">
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail">
                             <img src="img/blog-img/4.jpg" alt="Naxos Festivities" style="width: 100%; display: block; object-fit: cover;">
@@ -387,7 +404,7 @@
                     </div><!-- end festivities single-blog-area -->
 
     <!-- Single Blog Area: Near-by Destinations -->
-                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="uncategorized" data-title="near-by destinations">
+                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="nearby-destinations" data-title="naxos near-by destinations">
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail">
                             <img src="img/blog-img/5.jpg" alt="Naxos Near-by Destinations" style="width: 100%; display: block; object-fit: cover;">
@@ -430,14 +447,14 @@
                     </div><!-- end near-by destinations single-blog-area -->
 
     <!-- Single Blog Area: Traditional Villages -->
-                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="uncategorized" data-title="traditional villages">
+                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="traditional-villages" data-title="naxos traditional villages">
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail">
                             <img src="img/blog-img/6.jpg" alt="Naxos Traditional Villages" style="width: 100%; display: block; object-fit: cover;">
                         </div>
                         <!-- Post Content -->
                         <div class="post-content">
-<h1 id="traditional-villages" style="text-align: center;"><strong>NAXOS TRADITIONAL VILLAGES</strong></h1>
+<h1 id="traditional-villages" style="text-align: center;"><strong>NAXOS' TRADITIONAL VILLAGES</strong></h1>
 <p>&nbsp;</p>
 <p style="text-align: center;"><strong>Naxos Town &amp; Immediate Surroundings</strong></p>
 <p><strong>Chora (Naxos Town) &mdash; </strong>The main hub of the island and where the ferries dock at the port, home to the Venetian Castle, old town alleys, and the Portara nearby.</p>
@@ -482,6 +499,102 @@
                         </div><!-- end traditional villages post-content -->
                     </div><!-- end traditional villages single-blog-area -->
 
+                    <!-- Traveler Stories: Section Intro -->
+                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="traveler-stories" data-title="naxos traveler stories through their eyes">
+                        <!-- Post Thumbnail -->
+                        <div class="blog-post-thumbnail">
+                            <img src="img/blog-img/6.jpg" alt="Naxos Traveler Stories" style="width: 100%; display: block; object-fit: cover;">
+                        </div>
+                        <!-- Post Content -->
+                        <div class="post-content">
+<h1 id="traveler-stories" style="text-align: center;"><strong>NAXOS, THROUGH THEIR EYES</strong></h1>
+<p>&nbsp;</p>
+<p style="text-align: center;">Every traveler arrives at Naxos with a different set of questions. Here's what visitors from a few of our favorite corners of the world discovered once they got here &mdash; and where they stayed while they figured it out.</p>
+                        </div><!-- end intro post-content -->
+                    </div><!-- end intro single-blog-area -->
+
+                    <!-- Single Blog Area: Traveler Story - USA -->
+                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="traveler-stories usa" data-title="american traveler naxos santorini usa">
+                        <!-- Post Thumbnail -->
+                        <div class="blog-post-thumbnail">
+                            <img src="img/blog-img/6.jpg" alt="American Traveler in Naxos" style="width: 100%; display: block; object-fit: cover;">
+                        </div>
+                        <!-- Post Content -->
+                        <div class="post-content">
+<h1 id="travel-usa" style="text-align: center;"><strong>🇺🇸 AN AMERICAN IN NAXOS: WHY I SKIPPED SANTORINI AND DON'T REGRET IT</strong></h1>
+<p>&nbsp;</p>
+<p>Every conversation about our trip to Greece started the same way. Someone would ask where we were going, and the moment I said "one of the smaller islands, not Santorini," I'd get the same slightly confused look. Santorini was the plan, for a while. It's the photo everyone already has in their head before they've booked a single flight.</p>
+<p>Then a coworker, who'd been twice, said something that stuck with me: "Santorini is where you go to see Greece. Naxos is where you go to actually be there." I didn't fully understand what she meant until I was standing in the middle of Naxos Town at seven in the evening, watching the harbor go orange, with maybe thirty other people around instead of three hundred.</p>
+<p>We'd done the research beforehand, the way you do when you're only getting one real vacation this year and don't want to waste it. Photos of Fira packed shoulder to shoulder at sunset. Reviews mentioning cruise ship days when the whole town changes character for a few hours. None of that is a knock on Santorini &mdash; it earned its reputation honestly. But it made us curious what a Greek island without that particular pressure would feel like.</p>
+<p>The ferry in from Athens took a few hours, which gave us time to recalibrate expectations. What we found on the other end wasn't a lesser version of the famous islands. It was a working island that happened to be extraordinarily beautiful, rather than a beautiful island that had rearranged itself around tourism.</p>
+<p>The Portara, the massive marble doorway standing alone at the harbor's edge, does the sunset thing everyone comes for &mdash; but there's room to actually stand there and look at it, rather than angling for a gap in a crowd. Chora's back alleys are a genuine maze, whitewashed and steep, and half the satisfaction was simply getting lost in them on purpose.</p>
+<p>What surprised us most was the food. Not "surprisingly good for a small island" &mdash; just good, full stop, in the way that happens when a place still cooks primarily for the people who live there. Naxian potatoes turned out to be an actual point of local pride, not a marketing phrase. We ate better, and paid less, than we expected to almost every night.</p>
+<p>The practical stuff, since Americans always want the practical stuff: renting a car is close to mandatory if you want to see beyond Chora, and it's worth it &mdash; the mountain villages are a different island entirely from the coast. Credit cards are widely accepted in town, less so in smaller villages, so keep some cash on hand. Tipping isn't the ritual it is at home; rounding up is appreciated, not expected.</p>
+<p>Where we stayed mattered more than we'd planned for. We'd booked a villa almost as an afterthought, assuming it would function like a slightly larger hotel room. It didn't. It gave the trip a center of gravity &mdash; mornings on a terrace instead of a hotel breakfast room, a pool that meant the hottest part of the afternoon wasn't a problem to solve, evenings that felt like they belonged to us rather than to a schedule. It's a different kind of vacation when you have a door to come back to instead of a room number.</p>
+<p>Santorini is still there, and it's still beautiful, and I don't think less of anyone who goes. But we got the version of Greece we didn't know we were looking for: quieter, less rehearsed, and somehow more memorable for exactly that reason. Santorini is where you take the photo. Naxos is where you remember the trip.</p>
+                        </div><!-- end usa post-content -->
+                    </div><!-- end usa single-blog-area -->
+
+                    <!-- Single Blog Area: Traveler Story - Netherlands -->
+                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="traveler-stories netherlands" data-title="dutch traveler naxos crete netherlands">
+                        <!-- Post Thumbnail -->
+                        <div class="blog-post-thumbnail">
+                            <img src="img/blog-img/6.jpg" alt="Dutch Traveler in Naxos" style="width: 100%; display: block; object-fit: cover;">
+                        </div>
+                        <!-- Post Content -->
+                        <div class="post-content">
+<h1 id="travel-netherlands" style="text-align: center;"><strong>🇳🇱 WHAT A DUTCH FAMILY FOUND IN NAXOS THAT WE DIDN'T IN CRETE</strong></h1>
+<p>&nbsp;</p>
+<p>This wasn't our first Greek island, or even our third. Crete, Rhodes, and a short stay on Kos are already behind us, so when we started planning this trip, the question wasn't "should we visit Greece" &mdash; it was "is there anywhere left that's actually worth the switch." Naxos kept coming up, usually described in the same slightly vague way: quieter, less developed, good for families. We wanted specifics before committing a week of our summer to it.</p>
+<p>The flight and transfer logistics were straightforward, nothing more complicated than Crete had been. What was different showed up almost immediately: Naxos Town doesn't feel built for tourism the way parts of Crete's north coast now do. The harbor still functions as a harbor. The backstreets in Chora are narrow because that's how they were built centuries ago, not because someone designed them to look charming for photos.</p>
+<p>We'd read that Naxos has real potential for cycling, given the terrain and quieter roads compared to somewhere like Malia, and that turned out to be true with a caveat: the coastal roads are manageable, but the interior climbs toward the mountain villages are genuinely steep. We rented e-bikes after the first day, which solved the problem entirely and let us reach villages like Filoti and Halki without the whole day being about the ride there.</p>
+<p>Cost was the other thing we'd gone in wondering about, since we tend to budget carefully even on a trip we're happy to spend on. A week here worked out comparable to our last trip to Crete, sometimes less once we accounted for how much we cooked ourselves. The villa had a proper kitchen, not a kettle and a mini-fridge, and the morning market in town sold vegetables and cheese good enough that eating in didn't feel like a compromise.</p>
+<p>To be fair about the trade-offs, since we'd rather be honest than glowing: the nightlife scene is much smaller than Crete's, if that's part of what you're after. English signage thins out fast once you're past the main tourist areas, and a few restaurants in the mountain villages only had menus in Greek, which was fine for us but worth knowing in advance. It is, in a real sense, a quieter island than the ones we'd visited before &mdash; that was the whole appeal, but it's worth going in with the right expectations.</p>
+<p>For the kids, the shallow, sheltered stretch at Agia Anna solved the "is it safe to just let them swim" question on day one, and the villa's own pool covered the rest of the days when the beach felt like too much effort. Having that pool, plus the extra space a villa gives a family that a hotel room simply can't, made a bigger difference to how relaxed the week felt than we expected going in.</p>
+<p>Would we recommend switching from Crete? Depends what you're chasing. If it's nightlife and a well-worn tourist infrastructure, stay with Crete. If it's the version of a Greek island that still runs on its own schedule rather than the tourist season's, Naxos earned its place on our list. We're already talking about which mountain village to base ourselves near next time.</p>
+                        </div><!-- end netherlands post-content -->
+                    </div><!-- end netherlands single-blog-area -->
+
+                    <!-- Single Blog Area: Traveler Story - Singapore -->
+                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="traveler-stories singapore" data-title="singapore traveler naxos first time asia">
+                        <!-- Post Thumbnail -->
+                        <div class="blog-post-thumbnail">
+                            <img src="img/blog-img/6.jpg" alt="Singaporean Traveler in Naxos" style="width: 100%; display: block; object-fit: cover;">
+                        </div>
+                        <!-- Post Content -->
+                        <div class="post-content">
+<h1 id="travel-singapore" style="text-align: center;"><strong>🇸🇬 A FIRST-TIMER'S GUIDE TO NAXOS: WHAT SURPRISED ME MOST</strong></h1>
+<p>&nbsp;</p>
+<p>Greece was always somewhere I'd get to eventually, on one of those trips that requires enough vacation days stacked together to justify the flight. When it finally happened, it was built around three weeks moving through Europe, with five days on Naxos in the middle &mdash; a name I'd only come across because a friend had visited the year before and wouldn't stop talking about it.</p>
+<p>Coming from Singapore, where everything runs efficiently and on time almost by design, I'd braced myself for the opposite. What I found instead was a different kind of order &mdash; slower, less visible, but real. Ferries left when they said they would. Our host had answered every question before we'd even thought to ask it: how to get from the port, where the nearest supermarket was, which taverna did takeout on the one night we didn't feel like going out.</p>
+<p>The anxiety I hadn't admitted to myself beforehand was about navigating a small island without much English signage. That fear mostly dissolved by the second day. Naxos Town has enough English in the places that matter &mdash; menus, ferry counters, pharmacies &mdash; and where it didn't, pointing and smiling covered the rest. The harder adjustment was simply the pace: shops closing for a few hours in the afternoon, dinner not really starting until nine, an unhurried rhythm that took active effort to stop fighting against.</p>
+<p>Visually, it was more rewarding than I'd expected from photos alone. The Portara at golden hour is the obvious one, and it deserves the reputation. Less expected was the walk through Chora's old town, where the whitewashed alleys twist enough that you lose your sense of direction within two turns, and every corner has a different blue door or bougainvillea vine worth stopping for. The Temple of Demeter, out past the vineyards, had almost no one else there the afternoon we visited, which felt like a rare thing anywhere in Europe in summer.</p>
+<p>Food ended up being the most consistent highlight, day after day. Not "Greek food" as a general idea, but specific things I hadn't heard of before arriving &mdash; the local potatoes, a particular sharp cheese, small fried fish eaten whole. Ordering became a small research project each night, and it never once disappointed.</p>
+<p>Staying at a villa rather than a hotel made the whole trip feel more manageable than I'd expected for a first visit. There was a real sense of being looked after &mdash; someone to message if anything was unclear, a private space to retreat to after a long day of sightseeing, none of the impersonal feeling I'd worried a small Greek island might have for a first-time visitor from somewhere as different as Singapore.</p>
+<p>Five days wasn't enough, in the end. It was enough to know I'd go back, and enough to understand why my friend wouldn't stop talking about it. If you're weighing whether a small Greek island is too much of an unknown for a first trip to Greece, I'd say it's exactly the opposite &mdash; it's the version of Greece that makes the rest of the unknown feel manageable too.</p>
+                        </div><!-- end singapore post-content -->
+                    </div><!-- end singapore single-blog-area -->
+
+                    <!-- Single Blog Area: Traveler Story - Germany -->
+                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="900ms" data-category="traveler-stories germany" data-title="german traveler naxos villa quality germany">
+                        <!-- Post Thumbnail -->
+                        <div class="blog-post-thumbnail">
+                            <img src="img/blog-img/6.jpg" alt="German Traveler in Naxos" style="width: 100%; display: block; object-fit: cover;">
+                        </div>
+                        <!-- Post Content -->
+                        <div class="post-content">
+<h1 id="travel-germany" style="text-align: center;"><strong>🇩🇪 WHAT I LOOK FOR IN A GREEK VILLA (AS SOMEONE WHO'S PICKY ABOUT QUALITY)</strong></h1>
+<p>&nbsp;</p>
+<p>Before booking anything, I always check the same things, in roughly the same order: is the property actually as photographed, is the construction solid or just dressed up for the camera, and does the host respond like someone who takes the place seriously. Naxos passed on all three counts, which is a large part of why I'm writing about it at all.</p>
+<p>I'd read, more than once, that Naxos was "less touristy" than the well-known islands, and I wanted to verify that rather than take it at face value. It held up. Naxos Town in the evening has a real crowd, but not the density of Santorini's caldera-side paths in high season. More telling was the interior of the island &mdash; villages like Apeiranthos and Filoti operate almost entirely on their own terms, with tourism as a visible but secondary layer over daily life, not the main economy dressed up as a village.</p>
+<p>The hiking exceeded what I'd expected from a beach-holiday island. Trails around Mount Zeus range from a manageable afternoon walk to a genuinely demanding full-day route, with almost none of the crowding you'd find on comparable trails in the Alps during summer. I'd pack proper boots, not sandals with good intentions, and start early enough to avoid the midday heat on the exposed sections.</p>
+<p>On the villa itself: construction quality was the first thing I checked on arrival, and it was reassuring. Thick stone walls that actually kept the interior cool without needing air conditioning running constantly, which matters both for comfort and for the electricity bill neither of us wanted to think about on holiday. The photos we'd been shown matched what we found, down to details like the kitchen counter material and the actual size of the pool &mdash; not a wide-angle lens trick.</p>
+<p>Food provenance is something I pay attention to at home, and it carried over naturally here. The cheese at the weekly market came from a producer whose name the vendor could tell us on request. The potatoes, which Naxos is genuinely known for regionally rather than as a tourist-brochure claim, showed up on nearly every menu we tried, and by the third night we understood why locals bother mentioning them at all.</p>
+<p>Precision on the practical details, since that's what I'd want if I were reading this beforehand: the best window to visit is late May to mid-June or September, avoiding both the peak heat and the more crowded weeks of July and August. A week, realistically, costs less than equivalent quality would in the Balearics or on Sardinia's better-known coast, once you account for villa rental split across a group rather than per-room hotel pricing.</p>
+<p>I don't hand out enthusiasm easily for places that haven't earned it, and I try not to write reviews that read like marketing. This one holds up under the kind of scrutiny I'd apply to any booking decision &mdash; the villa was exactly as described, the island was quieter than its more famous neighbors without pretending to be undiscovered, and the details that usually disappoint on closer inspection simply didn't, here.</p>
+                        </div><!-- end germany post-content -->
+                    </div><!-- end germany single-blog-area -->
+
                 </div><!-- end col-12 col-md-9 -->
             </div><!-- end row -->
 
@@ -522,15 +635,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         var activeCategory = 'all';
 
         function filterPosts() {
-            var query = document.getElementById('blog-search').value.toLowerCase().trim();
+            var searchBox = document.getElementById('blog-search');
+            var query = searchBox ? searchBox.value.toLowerCase().trim() : '';
             var posts = document.querySelectorAll('.single-blog-area');
+            var noResultsMsg = document.getElementById('no-results-msg');
             var anyVisible = false;
 
             posts.forEach(function(post) {
-                var title = post.getAttribute('data-title') || '';
-                var cat = post.getAttribute('data-category') || '';
-                var matchesSearch = query === '' || title.indexOf(query) !== -1;
-                var matchesCategory = activeCategory === 'all' || cat === activeCategory;
+                var title = (post.getAttribute('data-title') || '').toLowerCase();
+                var bodyText = (post.innerText || post.textContent || '').toLowerCase();
+                var cats = (post.getAttribute('data-category') || '').toLowerCase().split(/\s+/);
+
+                var matchesSearch = query === '' || title.indexOf(query) !== -1 || bodyText.indexOf(query) !== -1;
+                var matchesCategory = activeCategory === 'all' || cats.indexOf(activeCategory) !== -1;
 
                 if (matchesSearch && matchesCategory) {
                     post.style.display = '';
@@ -539,9 +656,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                     post.style.display = 'none';
                 }
             });
+
+            if (noResultsMsg) {
+                noResultsMsg.style.display = anyVisible ? 'none' : 'block';
+            }
         }
 
         document.addEventListener('DOMContentLoaded', function() {
+            var searchBox = document.getElementById('blog-search');
+            if (searchBox) {
+                searchBox.addEventListener('input', filterPosts);
+            }
+
             var catLinks = document.querySelectorAll('.cat-link');
             catLinks.forEach(function(link) {
                 link.addEventListener('click', function(e) {
@@ -550,6 +676,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                     this.classList.add('active');
                     activeCategory = this.getAttribute('data-cat');
                     filterPosts();
+
+                    if (activeCategory !== 'all') {
+                        var target = document.getElementById(activeCategory) ||
+                                      document.querySelector('.single-blog-area[data-category~="' + activeCategory + '"]');
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
                 });
             });
         });
