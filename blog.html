@@ -168,14 +168,7 @@
 <p>&nbsp;</p>
 <h3 style="text-align: right;"><span style="color: #003366;"> THE FABNAXOSVILLAS BLOG</span></h3>
 <p>&nbsp;</p>
-<h3 style="text-align: center;"><span style="color: #808080;">BLOG CONTENTS</span></h3>
-<h2><a href="#archaeology" style="color: #003366; text-decoration: none;">ARCHAEOLOGY</a></h2>
-<h2><a href="#beaches" style="color: #003366; text-decoration: none;">BEACHES</a></h2>
-<h2><a href="#food" style="color: #003366; text-decoration: none;">FOOD</a></h2>
-<h2><a href="#festivities" style="color: #003366; text-decoration: none;">FESTIVITIES</a></h2>
-<h2><a href="#nearby-destinations" style="color: #003366; text-decoration: none;">NEAR-BY DESTINATIONS</a></h2>
-<h2><a href="#traditional-villages" style="color: #003366; text-decoration: none;">TRADITIONAL VILLAGES</a></h2>
-<h2><a href="#traveler-stories" style="color: #003366; text-decoration: none;">TRAVELER STORIES</a></h2>
+<p>&nbsp;</p>
 
 <div style="max-width: 500px; margin: 30px auto 20px auto;">
     <input type="text" id="blog-search" placeholder="Search the blog (e.g. beaches, villa, food)..." style="width: 100%; padding: 12px 16px; border: 1px solid #ccc; border-radius: 30px; font-size: 15px; outline: none;">
@@ -191,6 +184,14 @@
 </div>
 <style>
     .cat-link.active { background-color: #003366; color: #ffffff !important; }
+    mark.stabilo-highlight {
+        background-color: #fff176;
+        color: #000000;
+        padding: 0 2px;
+        border-radius: 2px;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+    }
 </style>
 
                     <!-- Single Blog Area: Archaeology -->
@@ -634,24 +635,92 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script>
         var activeCategory = 'all';
 
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        function clearHighlights() {
+            document.querySelectorAll('mark.stabilo-highlight').forEach(function(mark) {
+                var parent = mark.parentNode;
+                if (!parent) return;
+                parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                parent.normalize();
+            });
+        }
+
+        function highlightMatches(root, query) {
+            if (!query) return;
+            var regex = new RegExp('(' + escapeRegExp(query) + ')', 'gi');
+
+            var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+                acceptNode: function(node) {
+                    if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                    if (node.parentNode && node.parentNode.tagName === 'MARK') return NodeFilter.FILTER_REJECT;
+                    if (node.parentNode && (node.parentNode.tagName === 'SCRIPT' || node.parentNode.tagName === 'STYLE')) return NodeFilter.FILTER_REJECT;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            });
+
+            var textNodes = [];
+            var n;
+            while ((n = walker.nextNode())) {
+                regex.lastIndex = 0;
+                if (regex.test(n.nodeValue)) {
+                    textNodes.push(n);
+                }
+            }
+
+            textNodes.forEach(function(node) {
+                var text = node.nodeValue;
+                var frag = document.createDocumentFragment();
+                var lastIndex = 0;
+                var match;
+                regex.lastIndex = 0;
+
+                while ((match = regex.exec(text)) !== null) {
+                    if (match.index > lastIndex) {
+                        frag.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+                    }
+                    var mark = document.createElement('mark');
+                    mark.className = 'stabilo-highlight';
+                    mark.textContent = match[0];
+                    frag.appendChild(mark);
+                    lastIndex = match.index + match[0].length;
+                    if (match.index === regex.lastIndex) {
+                        regex.lastIndex++;
+                    }
+                }
+                if (lastIndex < text.length) {
+                    frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+                }
+                node.parentNode.replaceChild(frag, node);
+            });
+        }
+
         function filterPosts() {
             var searchBox = document.getElementById('blog-search');
-            var query = searchBox ? searchBox.value.toLowerCase().trim() : '';
+            var query = searchBox ? searchBox.value.trim() : '';
+            var queryLower = query.toLowerCase();
             var posts = document.querySelectorAll('.single-blog-area');
             var noResultsMsg = document.getElementById('no-results-msg');
             var anyVisible = false;
+
+            clearHighlights();
 
             posts.forEach(function(post) {
                 var title = (post.getAttribute('data-title') || '').toLowerCase();
                 var bodyText = (post.innerText || post.textContent || '').toLowerCase();
                 var cats = (post.getAttribute('data-category') || '').toLowerCase().split(/\s+/);
 
-                var matchesSearch = query === '' || title.indexOf(query) !== -1 || bodyText.indexOf(query) !== -1;
+                var matchesSearch = queryLower === '' || title.indexOf(queryLower) !== -1 || bodyText.indexOf(queryLower) !== -1;
                 var matchesCategory = activeCategory === 'all' || cats.indexOf(activeCategory) !== -1;
 
                 if (matchesSearch && matchesCategory) {
                     post.style.display = '';
                     anyVisible = true;
+                    if (query !== '') {
+                        highlightMatches(post, query);
+                    }
                 } else {
                     post.style.display = 'none';
                 }
