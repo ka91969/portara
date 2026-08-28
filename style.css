@@ -1462,3 +1462,17 @@ img {
 /* The end */
 
 /*# sourceMappingURL=style.css.map */
+
+/* Mobile Touch & Scroll Lock Fix */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+}
+
+.grids {
+    pointer-events: none !important;
+}
+
+#preloader {
+    pointer-events: none !important;
+}
